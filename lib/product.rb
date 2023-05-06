@@ -7,3 +7,8 @@ class Product
     end
 end
 
+def to_s
+  "цена #{price}, (осталось #{amount})"
+end
+
+
