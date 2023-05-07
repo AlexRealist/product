@@ -5,17 +5,18 @@ require_relative 'lib/film'
 
 
 
-products = []
 
-products << Film.new(title: "Остров", director: "Dicaprio", price: 500, year: 2015, amount: 4)
-products << Book.new(name: "Буратино", author: "Папа Карло", price: 555, year: 2020, amount: 5)
+film = Film.new(title: "Остров", director: "Dicaprio", year: 2015, )
+film.amount = 10
+film.update(price: 1245)
 
-products << Book.new(
-  name: "Италия",
-  author: "Итальянец",
-  price: "300",
-  year: 2010,
-  amount: 10
-)
+book = Book.new(price: 555, amount: 5)
+book.update(year: 2015)
+book.author = "Spilberg"
+# book.genre = "приключения пиратов"
+book.update(title: 'приключения шурика')
 
-products.each {|product| puts product}
+
+puts book
+
+puts film

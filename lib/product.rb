@@ -1,14 +1,18 @@
 class Product
-  attr_reader :price, :amount
+  attr_accessor :price, :amount
 
   def initialize(params)
     @amount = params [:amount]
     @price = params [:price]
     end
-end
 
-def to_s
+
+  def to_s
   "цена #{price}, (осталось #{amount})"
+  end
+
+def update(params)
+  @price = params[:price] if params[:price]
+  @amount = params [:amount] if params [:amount]
+  end
 end
-
-

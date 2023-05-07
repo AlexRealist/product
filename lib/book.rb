@@ -1,13 +1,20 @@
 class Book < Product
-  attr_reader :year, :name, :author
+  attr_accessor :title, :genre, :author
   def initialize(params)
     super
-    @year = params [:year]
-    @name = params [:name]
+    @title = params [:title]
+    @genre = params [:genre]
     @author = params [:author]
   end
 
   def to_s
-    "Название #{name}, #{year} год издания, автор #{author}, #{super}"
+    "Название #{title}, #{genre} год издания, автор #{author}, #{super}"
+  end
+
+  def update(params)
+    super
+    @title = params[:title] if params[:title]
+    @genre = params[:genre] if params[:genre]
+    @author = params[:author] if params[:author]
   end
 end
